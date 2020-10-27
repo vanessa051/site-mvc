@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: pink;
+}
+
+.corpo{
+    width: 1000px;
+    margin: 0 auto;
+  background-color: azure;
+}
+
+.topo{
+    padding: 20px;
+    border-bottom: 3px solid pink;
+}
+
+
+a{
+    color: blueviolet;
+    text-decoration: none;
+    font: 30px Arial;
+    padding-left: 15px;
+}
+    a:hover{
+        background-color: coral;
+    }
+
+
+.conteudo{
+    padding: 20px;
+    background-color: azure;
+}
+    .conteudo h1{
+        font: 30px Arial;
+        color: hotpink;
+    margin: 20px;
+    }
+
+
+article{
+    margin-bottom: 25px;
+}
+    article h2 a{
+        font: 22px Arial;
+        color: blueviolet;
+        margin-bottom: 7px;
+    }
+    article p{
+        font: 18px Arial;
+        padding-left: 2px;
+    }
