@@ -17,7 +17,10 @@ body{
     padding: 20px;
     border-bottom: 3px solid pink;
 }
-
+    .admin{
+        float: right;
+        font-size: 20px;
+    }
 
 a{
     color: blueviolet;

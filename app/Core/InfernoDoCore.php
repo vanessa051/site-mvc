@@ -1,9 +1,15 @@
 <?php
+//PÁGINA QUE LÊ AS REQUISIÇÕES GET
 
 class InfernoDoCore{
     public function start($urlGet){
 
-        $acao = 'index';
+        if(isset($urlGet['metodo'])){
+            $acao = $urlGet['metodo'];
+        }else{
+            $acao = 'index';
+        }
+        
 
         if(isset($urlGet['pagina'])){
             $controller = ucfirst($urlGet['pagina'].'Controller');
