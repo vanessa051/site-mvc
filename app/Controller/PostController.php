@@ -5,13 +5,15 @@ class PostController{
 
         try{
         $postagem = Postagem::selecionaPorId($params);
-            var_dump($postagem);
+
         $loader = new \Twig\Loader\FilesystemLoader('app/View');
         $twig = new \Twig\Environment($loader);
             $template = $twig->load('single.html');
 
           $parametros = array();
-          $parametros['ttulo'] = $postagem->conteudo;
+          $parametros['titulo'] = $postagem->titulo;
+          $parametros['conteudo'] = $postagem->conteudo;
+          $parametros['comentarios'] = $postagem->comentarios;
 
           
           $conteudo = $template->render($parametros);

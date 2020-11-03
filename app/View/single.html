@@ -7,6 +7,22 @@
             <h2>{{titulo}}</h2>
         </header>
         <p>{{conteudo}}</p>
+
+        <br>
+        <hr>
+        <br>
+        <h2>Comentarios</h2>
+        <br>
+    {% if comentarios == false %}
+        <p>Nenhum comentário encontrado</p>
+        {% else %}
+     {% for coments in comentarios %}
+        <h3>{{coments.nome}}</h3>
+        <p>{{coments.mensagem}}</p>
+            <br>
+     {% endfor %}
+    {% endif %}
+        
     </article>
 
 </section>
