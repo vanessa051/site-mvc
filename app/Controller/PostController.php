@@ -5,7 +5,7 @@ class PostController{
 
         try{
         $postagem = Postagem::selecionaPorId($params);
-
+            var_dump($postagem);
         $loader = new \Twig\Loader\FilesystemLoader('app/View');
         $twig = new \Twig\Environment($loader);
             $template = $twig->load('single.html');

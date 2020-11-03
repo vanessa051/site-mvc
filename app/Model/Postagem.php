@@ -32,8 +32,14 @@ class Postagem{
 
         $resultado = $sql->fetchObject('Postagem');
 
-        if(!resultado){
+        if(!$resultado){
             throw new Exception("Não foi encontrado registro no banco");
+        }else{
+            $resultado->comentarios = Comentario::selecionarComentarios($resultado->id);
+
+            if($resultado->comentarios){
+                $resultado->comentarios = 'Não existe nenhum comentário para essa postagem';
+            }
         }
 
         return $resultado;
