@@ -11,4 +11,13 @@
         <th>ALTERAR</th>
         <th>DELETAR</th>
     </tr>
+
+    {% for postagem in postagens %}
+    <tr>
+        <th>{{postagem.id}}</th>
+        <th>{{postagem.titulo}}</th>
+        <th>ALTERAR</th>
+        <th>DELETAR</th>
+    </tr>
+    {% endfor %}
 </table>

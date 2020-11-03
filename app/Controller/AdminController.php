@@ -7,7 +7,10 @@ class AdminController{
         $twig = new \Twig\Environment($loader);
             $template = $twig->load('admin.html');
 
+            $objPostagens = Postagem::selecionaTodos();
+            
           $parametros = array();
+          $parametros['postagens'] = $objPostagens;
 
           $conteudo = $template->render($parametros);
           echo $conteudo;
@@ -27,6 +30,16 @@ class AdminController{
     
     public function insert()
     {
-        var_dump($_POST);
+        try{
+            Postagem::insert($_POST);
+
+            echo '<script>alert("Publicação inserida com sucesso");</script>';
+            echo'<script>location.href="http://localhost/site-mvc/?pagina=admin&metodo=index"</script>';
+
+        }catch(Exception $e){
+            echo '<script>alert("'.$e->getMessage().'");</script>';
+            echo'<script>location.href="http://localhost/site-mvc/?pagina=admin&metodo=create"</script>';
+        }
+       
     }
     }
