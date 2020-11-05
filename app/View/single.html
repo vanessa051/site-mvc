@@ -13,6 +13,20 @@
         <br>
         <h2>Comentarios</h2>
         <br>
+
+        <form method="POST" action="?pagina=post&metodo=addComent">
+            <span>Nome: </span><br>
+
+            <input type="text" name="nome"> <br><br>
+
+            <span>Mensagem</span><br>
+            <textarea name="msg"></textarea>
+            <br><br>
+
+            <input type="hidden" name="id" value="{{id}}">
+            <input type="submit" value="Enviar">
+        </form>
+
     {% if comentarios == false %}
         <p>Nenhum comentário encontrado</p>
         {% else %}

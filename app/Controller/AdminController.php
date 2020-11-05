@@ -71,6 +71,21 @@ class AdminController{
                 echo'<script>location.href="http://localhost/site-mvc/?pagina=admin&metodo=change&id='.$_POST['id'].'"</script>';
             }
         }
+
+        public function delete($paramId)
+        {
+            try{
+                Postagem::delete($paramId);
+
+                echo '<script>alert("Publicação Deletada");</script>';
+                echo'<script>location.href="http://localhost/site-mvc/?pagina=admin&metodo=index"</script>';
+            }catch(Exception $e){
+                echo '<script>alert("'.$e->getMessage().'");</script>';
+                echo'<script>location.href="http://localhost/site-mvc/?pagina=admin&metodo=index"</script>';
+
+            }
+            
+        }
        
     }
     

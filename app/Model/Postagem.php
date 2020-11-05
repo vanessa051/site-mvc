@@ -87,4 +87,21 @@ class Postagem{
     
             return true;
         }
+
+        public static function delete($id){
+            $con = Connection::getConn();
+
+            $sql = "DELETE FROM postagem WHERE id = :id";
+            $sql = $con->prepare($sql);
+            $sql->bindValue(':id', $id);
+            $resultado = $sql->execute();
+
+            if ($resultado == 0){
+                throw new Exception(("Falha ao deletar publicação"));
+    
+                return false;
+            }
+    
+            return true;
+        }
 }
